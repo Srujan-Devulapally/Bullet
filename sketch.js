@@ -10,10 +10,14 @@ function setup() {
  thickes=random(22,83)
  
  wall=createSprite(1500, 200, thickness, height/2)
+ bullet=createSprite(50, 200, 50, 5)
+bullet.velocityX=speed;
+bullet.shapeColor=color(255)
 }
 
 function draw() {
   background("black");  
+  bullet.collide(wall)
   if(hasCollided(bullet,wall))
   {
     bullet.velocity=0;
